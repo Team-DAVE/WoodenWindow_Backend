@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+  - "6.14.8"
+
+cache: npm
+
+services:
+  - docker
+
+# deploy:
+#   provider: elasticbeanstalk
+#   access_key_id: 
+#     secure: "AKIAJKL2VBKLIZ6YG3PQ"
+#   secret_access_key: 
+#     secure: "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"
+#   region: "us-east-1"
+#   app: "Project2"
+#   env: "Project2-env"
+#   bucket_name: "WoodenWindow"
+
+install:
+  - npm ci
+
+script:
+  - npm test
+  
