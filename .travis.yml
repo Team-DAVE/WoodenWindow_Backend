@@ -2,6 +2,11 @@ language: java
   jdk: 
   - oraclejdk8
 
+# whitelist
+branches:
+  only:
+    - master
+
 services:
   - docker
 before_script:
