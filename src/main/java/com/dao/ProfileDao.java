@@ -40,7 +40,7 @@ public class ProfileDao {
     }
 
     @Transactional
-    public Profile getProfilebyProfileId(int profiledId) {
+    public Profile getProfileByProfileId(int profiledId) {
         System.out.println("made it to the profileDao, getProfilebyProfileId method");
         Session session = sessionFactory.getCurrentSession();
         String sql = "Select p From Profile p where profileId = ?";

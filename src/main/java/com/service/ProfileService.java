@@ -30,13 +30,21 @@ public class ProfileService {
         ProfileService profileServiceBean = ac.getBean("profileService", ProfileService.class);
         int profileId = profileServiceBean.profileDao.addProfile(profileName, resume, user);
         if (profileId > 0) {
-            Profile addedProfile = profileServiceBean.profileDao.getProfilebyProfileId(profileId);
+            Profile addedProfile = profileServiceBean.profileDao.getProfileByProfileId(profileId);
             ac.close();
             return addedProfile;
         }
         System.out.println("ProfileService method ended bad profileId");
         ac.close();
         return null;
+    }
+
+    public Profile getProfileByProfileId(int profileId) {
+        System.out.println("ProfileService getProfileByProfileId method reached");
+        AbstractApplicationContext ac = new ClassPathXmlApplicationContext("application-context.xml");
+        ProfileService profileServiceBean = ac.getBean("profileService", ProfileService.class);
+        Profile profile = profileServiceBean.profileDao.getProfileByProfileId(profileId);
+        return  profile;
     }
 
     public List<Profile> getProfilesByUserId(int userId) {

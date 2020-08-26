@@ -37,8 +37,16 @@ public class ProfileController {
 
     @GetMapping(path="{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
+    public ResponseEntity<Profile> getProfileByProfileId(@PathVariable int id) {
+        System.out.println("ProfileController getProfileByProfileId method reached");
+        Profile profile = profileService.getProfileByProfileId(id);
+        return new ResponseEntity<>(profile, HttpStatus.OK);
+    }
+
+    @GetMapping(path="/user/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
     public ResponseEntity<List<Profile>> getProfilesByUserId(@PathVariable int id) {
-        System.out.println("ProfileController addProfile method reached");
+        System.out.println("ProfileController getProfilesByUserId method reached");
         List<Profile> profiles = profileService.getProfilesByUserId(id);
         System.out.println(profiles);
         return new ResponseEntity<>(profiles, HttpStatus.OK);
