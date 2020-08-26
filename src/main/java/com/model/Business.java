@@ -1,7 +1,12 @@
+// File: Business.java
+// Business class with get and set methods
 package com.model;
 
 import javax.persistence.*;
 
+/**
+ * This is a model class to hold businesses information
+ */
 @Entity
 @Table(name = "BUSINESS")
 public class Business {

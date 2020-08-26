@@ -1,3 +1,5 @@
+// File: UserDao.java
+// DAO class for user table
 package com.dao;
 
 import com.model.Users;
@@ -11,7 +13,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-
+/**
+ * This is the User DAO class for interaction with our database.
+ */
 @Repository
 @Transactional
 public class UserDao {
@@ -25,6 +29,11 @@ public class UserDao {
     public UserDao() {
     }
 
+    /**
+     * addUser method will take in the parameters from the user's reactive form and add it to the database
+     * on the user table. A query will be called and check if the email does not exist in the database. If not,
+     * it will add a user to the database.
+     */
     @Transactional
     public boolean addUser(String email, String password, String firstName, String lastName) {
         System.out.println("made it to dao");
@@ -47,6 +56,10 @@ public class UserDao {
         return false;
     }
 
+    /**
+     * findUserByEmail method will take the user's email input as a parameter. It will create a query to select a user
+     * based on the email that is passed as a parameter.
+     */
     @Transactional
     public Users findUserByEmail(String email) {
         Session session = sessionFactory.getCurrentSession();
@@ -55,7 +68,7 @@ public class UserDao {
         query.setParameter(0, email);
         return (Users) query.uniqueResult();
     }
-    
+
     @Transactional
     public Users findUserById(int id) {
         Session session = sessionFactory.getCurrentSession();
@@ -65,6 +78,9 @@ public class UserDao {
         return (Users) query.uniqueResult();
     }
 
+    /**
+     * findAll method will create and run a query to get all users from the table Users.
+     */
     @Transactional(isolation = Isolation.READ_COMMITTED, readOnly=true)
     public List<Users> findAll() {
         System.out.println("dao method findall invoked");

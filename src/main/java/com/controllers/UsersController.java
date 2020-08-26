@@ -1,3 +1,5 @@
+// File: UsersController.java
+// Controller class to communicate between frontend and backend
 package com.controllers;
 
 import com.model.Users;
@@ -17,16 +19,11 @@ import java.net.URISyntaxException;
 public class UsersController {
     private UserService userService = new UserService();
 
-//    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-//    @ResponseBody
-//    public ResponseEntity<List<Users>> getUsers() {
-//        System.out.println("controller method get users invoked");
-//        System.out.println(userService.getUsers());
-//        List<Users> users = userService.getUsers();
-//        System.out.println(users);
-//        return new ResponseEntity<>(users, HttpStatus.OK);
-//    }
-
+    /**
+     * addUser method will retrieve the information from the request and check whether is it null or not. If not null,
+     * The information will be set into newUser and run through the service and dao to be returned back to the controller
+     * to determine whether the user has been added or not.
+     */
     @PostMapping
     @ResponseBody
     public boolean addUser(@RequestBody Users newUser) throws URISyntaxException {
@@ -45,6 +42,11 @@ public class UsersController {
         }
     }
 
+    /**
+     * login method will retrieve the information from the request and check whether is it null or not. If not null,
+     * The information will be set into currentUser and run through the service and dao to be returned back to the controller
+     * to determine whether the user has been logged in or not.
+     */
     @PostMapping(path="/login")
     @ResponseBody
     public ResponseEntity<?> login(@RequestBody Users currentUser) throws URISyntaxException {

@@ -1,7 +1,12 @@
+// File: JobPosting.java
+// Jobs class with get and set methods
 package com.model;
 
 import javax.persistence.*;
 
+/**
+ * This is a model class to hold job's posting information
+ */
 @Entity
 @Table(name = "JOB_POSTING")
 public class JobPosting {

@@ -1,8 +1,13 @@
+// File: Users.java
+// User class with get and set methods
 package com.model;
 
 import javax.persistence.*;
 import java.util.Set;
 
+/**
+ * This is a model class to hold user information
+ */
 @Entity
 @Table(name = "USERS")
 public class Users {

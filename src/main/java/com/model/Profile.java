@@ -1,7 +1,12 @@
+// File: Profile.java
+// Profile class with get and set methods
 package com.model;
 
 import javax.persistence.*;
 
+/**
+ * This is a model class to hold profile's information
+ */
 @Entity
 @Table(name = "PROFILE")
 public class Profile {

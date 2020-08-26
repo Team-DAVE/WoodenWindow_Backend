@@ -1,3 +1,5 @@
+// File: JobPostingDao.java
+// DAO class for interacting with job_posting table in the database
 package com.dao;
 
 import com.model.Business;
@@ -12,6 +14,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * This is the Job Posting DAO class for interaction with our database with the job_posting table.
+ */
 @Repository
 @Transactional
 public class JobPostingDao {
@@ -25,6 +30,10 @@ public class JobPostingDao {
     public JobPostingDao() {
     }
 
+    /**
+     * addJobPosting method instantiates an object of JobPosting and sets the position, job description, salary,
+     * and business which will be saved in the session.
+     */
     @Transactional
     public void addJobPosting(String position, String jobSummary, String salary, Business business) {
         System.out.println("made it to the JobPostingDao, addJobPosting method");
@@ -38,6 +47,10 @@ public class JobPostingDao {
         session.save(jobPosting);
     }
 
+    /**
+     * getJobPostingsByBusiness method will create and execute a query for getting the job posting based on
+     * the business name. The query will then be put into a list and be returned.
+     */
     @Transactional
     public List<JobPosting> getJobPostingsByBusiness(int businessId) {
         System.out.println("made it to the JobPostingDao, getJobPostingsByBusiness method");

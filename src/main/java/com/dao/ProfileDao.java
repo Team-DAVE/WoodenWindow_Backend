@@ -1,3 +1,5 @@
+// File: ProfileDao.java
+// DAO class for interacting with profile table in the database
 package com.dao;
 
 import com.model.Profile;
@@ -11,6 +13,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * This is the Profile DAO class for interaction with our database with the profile table.
+ */
 @Repository
 @Transactional
 public class ProfileDao {
@@ -24,6 +29,10 @@ public class ProfileDao {
     public ProfileDao() {
     }
 
+    /**
+     * addProfile method instantiates an object of Profile and sets the profile name, resume, and user
+     * which will be saved in the session and returned.
+     */
     @Transactional
     public int addProfile(String profileName, String resume, Users user) {
         System.out.println("made it to the profileDao, addProfile method");
@@ -39,6 +48,10 @@ public class ProfileDao {
         return newProfileId;
     }
 
+    /**
+     * getProfileByProfileId method will create and execute a query for getting the profile skill based on
+     * the profile. The query will then be put into a list and be returned.
+     */
     @Transactional
     public Profile getProfileByProfileId(int profiledId) {
         System.out.println("made it to the profileDao, getProfilebyProfileId method");
@@ -50,6 +63,10 @@ public class ProfileDao {
         return profile;
     }
 
+    /**
+     * getProfileByUserId method will create and execute a query for getting the profile based on
+     * the user. The query will then be put into a list and be returned.
+     */
     @Transactional
     public List<Profile> getProfilesByUserId(int userId) {
         System.out.println("made it to the profileDao, getProfilesByUserId method");

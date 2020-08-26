@@ -1,3 +1,5 @@
+// File: Java.java
+// Main class for testing purposes
 package com.driver;
 
 import com.dao.*;
@@ -8,7 +10,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-
+/**
+ * This is the main class to test out if our methods for our DAOs are working
+ */
 @Component
 public class Java {
     UserDao userDao;

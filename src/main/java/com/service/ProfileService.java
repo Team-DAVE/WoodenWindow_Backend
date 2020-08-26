@@ -1,3 +1,5 @@
+// File: ProfileService.java
+// Service class acts as a layer communicating between controller and DAO
 package com.service;
 
 import com.dao.ProfileDao;
@@ -24,6 +26,11 @@ public class ProfileService {
 
     public ProfileService() { };
 
+    /**
+     * addProile method instantiates an ApplicationContext and communicates with the profileDao by calling upon addProfile
+     *  The returned int from the profile DAO will be checked here to see if the profileId is appropriate. If it is good,
+     *  will return a profile to give back to the controller, else null.
+     */
     public Profile addProfile(String profileName, String resume, Users user) {
         System.out.println("ProfileService addProfile method reached");
         AbstractApplicationContext ac = new ClassPathXmlApplicationContext("application-context.xml");
@@ -39,6 +46,10 @@ public class ProfileService {
         return null;
     }
 
+    /**
+     * getProfileByProfileId method instantiates an ApplicationContext and communicates with the profileDao by calling
+     * getProfileByProfileId which will end up returning the user's profile
+     */
     public Profile getProfileByProfileId(int profileId) {
         System.out.println("ProfileService getProfileByProfileId method reached");
         AbstractApplicationContext ac = new ClassPathXmlApplicationContext("application-context.xml");
@@ -47,6 +58,10 @@ public class ProfileService {
         return  profile;
     }
 
+    /**
+     * getProfileByUserId method instantiates an ApplicationContext and communicates with the profileDao by calling
+     * getProfileByUserId which will end up returning the user's profile
+     */
     public List<Profile> getProfilesByUserId(int userId) {
         System.out.println("ProfileService getProfilesByUserId method reached");
         AbstractApplicationContext ac = new ClassPathXmlApplicationContext("application-context.xml");
