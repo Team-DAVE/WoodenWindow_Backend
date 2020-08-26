@@ -16,15 +16,15 @@ after_success:
   - docker tag WoodenWindowBackEnd $DOCKER_USER/WoodenWindowBackEnd:latest
   - docker push $DOCKER_USER/WoodenWindowBackEnd:latest
 
-# deploy:
-#   provider: elasticbeanstalk
-#   access_key_id:
-#     secure: "ACCESS-KEY-ID"
-#   secret_access_key:
-#     secure: "SECRET-ACCESS-KEY"
-#   region: "us-east-1"
-#   app: "Project_2"
-#   env: "http://project2-env.eba-pmybczpa.us-east-1.elasticbeanstalk.com/"
-#   bucket_name: "elasticbeanstalk-us-east-1-883500907501"
-#   on:
-#     branch: master
+deploy:
+  provider: elasticbeanstalk
+  access_key_id:
+    secure: "ACCESS-KEY-ID"
+  secret_access_key:
+    secure: "SECRET-ACCESS-KEY"
+  region: "us-east-1"
+  app: "Project_2"
+  env: "http://project2-env.eba-pmybczpa.us-east-1.elasticbeanstalk.com/"
+  bucket_name: "elasticbeanstalk-us-east-1-883500907501"
+  on:
+    branch: master
