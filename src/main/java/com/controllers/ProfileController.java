@@ -1,3 +1,5 @@
+// File: ProfileController.java
+// Controller class to communicate between frontend and backend
 package com.controllers;
 
 import com.model.Profile;
@@ -18,6 +20,11 @@ import java.util.List;
 public class ProfileController {
     private ProfileService profileService = new ProfileService();
 
+    /**
+     * addProfile method will retrieve the information from the request and check whether is it null or not. If not null,
+     * The information will be set into newProfile and run through the service and dao to be returned back to the controller
+     * for it to go to the front end side.
+     */
     @PostMapping
     @ResponseBody
     public ResponseEntity<?> addProfile(@RequestBody Profile newProfile) throws URISyntaxException {
@@ -35,6 +42,9 @@ public class ProfileController {
         }
     }
 
+    /**
+     * getProfileByProfileId method will retrieve the information from the database to be displayed on the view of the front-end
+     */
     @GetMapping(path="{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<Profile> getProfileByProfileId(@PathVariable int id) {
@@ -43,6 +53,9 @@ public class ProfileController {
         return new ResponseEntity<>(profile, HttpStatus.OK);
     }
 
+    /**
+     * getProfilesByUserId method will retrieve the information from the database to be displayed on the view of the front-end
+     */
     @GetMapping(path="/user/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<List<Profile>> getProfilesByUserId(@PathVariable int id) {

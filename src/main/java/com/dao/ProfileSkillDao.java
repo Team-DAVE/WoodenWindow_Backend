@@ -1,3 +1,5 @@
+// File: ProfileSkillDao.java
+// DAO class for interacting with profile_skill table in the database
 package com.dao;
 
 import com.model.Profile;
@@ -12,6 +14,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * This is the Profile Skill DAO class for interaction with our database with the profile_skill table.
+ */
 @Repository
 @Transactional
 public class ProfileSkillDao {
@@ -25,6 +30,10 @@ public class ProfileSkillDao {
     public ProfileSkillDao() {
     }
 
+    /**
+     * addProfileSkill method instantiates an object of ProfileSkill and sets the profile skill name and profile
+     * which will be saved in the session.
+     */
     @Transactional
     public void addProfileSkill(String profileSkillName, Profile profile) {
         System.out.println("made it to the profileSkillDao, addProfileSkill method");
@@ -37,6 +46,10 @@ public class ProfileSkillDao {
         session.save(newProfileSkill);
     }
 
+    /**
+     * getProfileSkillsByProfile method will create and execute a query for getting the profile skill based on
+     * the profile. The query will then be put into a list and be returned.
+     */
     @Transactional
     public List<ProfileSkill> getProfileSkillsByProfile(int profileId) {
         System.out.println("made it to the profileSkillDao, getProfileSkillsByProfile method");

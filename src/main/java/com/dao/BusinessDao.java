@@ -1,3 +1,5 @@
+// File: BusinessDao.java
+// DAO class for interacting with business table in the database
 package com.dao;
 
 import com.model.Business;
@@ -12,6 +14,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * This is the Business DAO class for interaction with our database with the business table.
+ */
 @Repository
 @Transactional
 public class BusinessDao {
@@ -25,6 +30,10 @@ public class BusinessDao {
     public BusinessDao() {
     }
 
+    /**
+     * addBusiness method instantiates an object of Business and sets the name, address, summary, and user
+     * which will be saved in the session.
+     */
     @Transactional
     public void addBusiness(String businessName, String address, String summary, Users user) {
         System.out.println("made it to the businessDao, addBusiness method");
@@ -38,6 +47,10 @@ public class BusinessDao {
         session.save(newBusiness);
     }
 
+    /**
+     * getBusinessesByUserId method will create and execute a query for getting the business based on the user.
+     * The query will then be put into a list and be returned.
+     */
     @Transactional
     public List<Business> getBusinessesByUserId(int userId) {
         System.out.println("made it to the businessDao, getBusinessesByUserId method");

@@ -1,7 +1,12 @@
+// File: RequiredSkill.java
+// Required skill class with get and set methods
 package com.model;
 
 import javax.persistence.*;
 
+/**
+ * This is a model class to hold required skill information for a job posting
+ */
 @Entity
 @Table(name = "REQUIRED_SKILL")
 public class RequiredSkill {

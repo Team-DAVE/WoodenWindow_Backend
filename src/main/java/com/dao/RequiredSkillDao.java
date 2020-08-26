@@ -1,3 +1,5 @@
+// File: RequiredSkillDao.java
+// DAO class for interacting with required_skill table
 package com.dao;
 
 import com.model.Business;
@@ -12,6 +14,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * This is the Required Skill DAO class for interaction with our database with the required_skill table.
+ */
 @Repository
 @Transactional
 public class RequiredSkillDao {
@@ -25,6 +30,10 @@ public class RequiredSkillDao {
     public RequiredSkillDao() {
     }
 
+    /**
+     * addRequiredSkill method instantiates an object of RequiredSkill and sets the required skill name and job posting
+     * which will be saved in the session.
+     */
     @Transactional
     public void addRequiredSkill(String requiredSkillName, JobPosting jobPosting) {
         System.out.println("made it to the RequiredSkillDao, addRequiredSkill method");
@@ -36,6 +45,10 @@ public class RequiredSkillDao {
         session.save(newRequiredSkill);
     }
 
+    /**
+     * getRequiredSkillsByJobPosting method will create and execute a query for getting the required skill based on
+     * the job posting. The query will then be put into a list and be returned.
+     */
     @Transactional
     public List<RequiredSkill> getRequiredSkillsByJobPosting(int jobPostingId) {
         System.out.println("made it to the RequiredSkillDao, getRequiredSkillsByJobPosting method");

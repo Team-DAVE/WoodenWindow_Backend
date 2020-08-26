@@ -1,3 +1,5 @@
+// File: ProfileSkill.java
+// Profile skill class with get and set methods
 package com.model;
 
 import com.model.Profile;
@@ -5,6 +7,9 @@ import com.model.Users;
 
 import javax.persistence.*;
 
+/**
+ * This is a model class to hold profile's skill information
+ */
 @Entity
 @Table(name = "PROFILE_SKILL")
 public class ProfileSkill {

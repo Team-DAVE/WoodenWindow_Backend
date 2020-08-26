@@ -1,3 +1,5 @@
+// File: ORMConfig.java
+// Configuration class for data source and hibernate
 package com.service;
 
 import org.apache.commons.dbcp.BasicDataSource;
