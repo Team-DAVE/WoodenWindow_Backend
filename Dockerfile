@@ -2,8 +2,7 @@ FROM tomcat:8.5-jdk8-openjdk
 
 WORKDIR $CATALINA_HOME
 
-ARG WAR_FILE=/target/*.war
-
+ARG WAR_FILE=/Docker/*.war
 
 COPY $WAR_FILE ./webapps/ROOT.war
 
