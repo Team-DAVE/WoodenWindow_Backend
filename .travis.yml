@@ -7,6 +7,7 @@ branches:
   only:
     - master
 
+
 services:
   - docker
 before_script:
@@ -33,3 +34,5 @@ deploy:
   bucket_name: "elasticbeanstalk-us-east-1-883500907501"
   on:
     branch: master
+
+
