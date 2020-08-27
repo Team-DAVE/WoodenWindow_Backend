@@ -9,7 +9,7 @@
     <!--  load the values in this file into the environment-->
     <context:property-placeholder location="WEB-INF/application.properties"/>
 
-
+    <bean name="swaggerConfig" class="com.service.SpringFoxConfig"/>
     <!-- enable annotation configuration -->
     <context:annotation-config/>
 
