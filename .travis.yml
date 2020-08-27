@@ -21,12 +21,12 @@ after_success:
 deploy:
  provider: elasticbeanstalk
  access_key_id:
-   secure: "ACCESS-KEY-ID"
+  secure: "AWS_ACCESS-KEY"
  secret_access_key:
-   secure: "SECRET-ACCESS-KEY"
+  secure: "AWS_SECRETE-ACCESS-KEY"
  region: "us-east-1"
  app: "Project_2"
  env: "http://project2-env.eba-pmybczpa.us-east-1.elasticbeanstalk.com/"
  bucket_name: "elasticbeanstalk-us-east-1-883500907501"
  on:
-   branch: master
+  branch: master
