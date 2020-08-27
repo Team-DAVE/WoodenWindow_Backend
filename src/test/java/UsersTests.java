@@ -16,7 +16,7 @@ public class UsersTests {
 //        u.setPassword("password");
 //        Assert.assertFalse(uc.addUser(u));
 //    }
-//
-//
+
+
 
 }
