@@ -24,7 +24,7 @@ deploy:
  secret_access_key: $AWS_SECRET_ACCESS_KEY
  region: "us-east-1"
  app: "wooden_window"
- env: "WoodenWindow-env.eba-gbcrfqjm.us-east-1.elasticbeanstalk.com"
+ env: "WoodenWindow-env.eba-gbcrfqjm.us-east-1"
  bucket_name: "elasticbeanstalk-us-east-1-883500907501"
  on:
   branch: master
