@@ -10,7 +10,7 @@ services:
  - docker
 script:
  - mvn install 
- - docker build - < Dockerfile --build-arg WAR_FILE=/target/*.war .
+ - docker build - < Dockerfile --build-arg WAR_FILE .
 after_success:
  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
  - docker tag woodenwindowbackend $DOCKER_USER/woodenwindowbackend:$TRAVIS_BUILD_NUMBER
@@ -26,7 +26,7 @@ deploy:
   secure: "AWS_SECRET_ACCESS_KEY"
  region: "us-east-1"
  app: "Project_2"
- env: "http://project2-env.eba-pmybczpa.us-east-1.elasticbeanstalk.com/"
+ env: "Project2-env.eba-pmybczpa.us-east-1.elasticbeanstalk.com"
  bucket_name: "elasticbeanstalk-us-east-1-883500907501"
  on:
   branch: master
