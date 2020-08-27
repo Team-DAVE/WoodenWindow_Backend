@@ -10,8 +10,8 @@ services:
  - docker
 script:
  - mvn install 
- - mvn run test --watch=false --no-progress
- - docker build woodenwindowbackend
+#  - mvn run test
+ - docker build - < Dockerfile
 after_success:
  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
  - docker tag woodenwindowbackend $DOCKER_USER/woodenwindowbackend:$TRAVIS_BUILD_NUMBER
