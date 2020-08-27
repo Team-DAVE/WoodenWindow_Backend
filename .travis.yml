@@ -1,5 +1,6 @@
 language: java
 jdk: oraclejdk8
+dist: trusty
 
 # whitelist
 branches:
@@ -7,8 +8,6 @@ only: master
 
 services:
  - docker
-before_script:
- -mvn install
 script:
  - mvn install mvn run test --watch=false --no-progress
  - docker build -t WoodenWindowBackEnd
