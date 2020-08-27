@@ -1,9 +1,0 @@
-{
-    "AWSEBDockerrunVersion": "1",
-    "Image": {
-     "Name": "dwood150/team_dave_backend:latest"
-    },
-    "Ports": [{
-     "ContainerPort": "8080"
-    }]
-   }
