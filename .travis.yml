@@ -9,8 +9,9 @@ only: master
 services:
  - docker
 script:
- - mvn install mvn run test --watch=false --no-progress
- - docker build -t woodenwindowbackend
+ - mvn install 
+ - mvn run test --watch=false --no-progress
+ - docker build woodenwindowbackend
 after_success:
  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
  - docker tag woodenwindowbackend $DOCKER_USER/woodenwindowbackend:$TRAVIS_BUILD_NUMBER
