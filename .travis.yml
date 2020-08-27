@@ -10,13 +10,13 @@ services:
  - docker
 script:
  - mvn install mvn run test --watch=false --no-progress
- - docker build -t WoodenWindowBackEnd
+ - docker build -t woodenwindowbackend
 after_success:
  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
- - docker tag WoodenWindowBackEnd $DOCKER_USER/WoodenWindowBackEnd:$TRAVIS_BUILD_NUMBER
- - docker push $DOCKER_USER/WoodenWindowBackEnd:$TRAVIS_BUILD_NUMBER
- - docker tag WoodenWindowBackEnd $DOCKER_USER/WoodenWindowBackEnd:latest
- - docker push $DOCKER_USER/WoodenWindowBackEnd:latest
+ - docker tag woodenwindowbackend $DOCKER_USER/woodenwindowbackend:$TRAVIS_BUILD_NUMBER
+ - docker push $DOCKER_USER/woodenwindowbackend:$TRAVIS_BUILD_NUMBER
+ - docker tag woodenwindowbackend $DOCKER_USER/woodenwindowbackend:latest
+ - docker push $DOCKER_USER/woodenwindowbackend:latest
 
 deploy:
  provider: elasticbeanstalk
