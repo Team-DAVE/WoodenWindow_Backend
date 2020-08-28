@@ -1,8 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "dwood150/woodenwindowbackend",
-    "Update": "true"
+    "Name": "dwood150/woodenwindowbackend"
   },
   "Ports": [
     {
