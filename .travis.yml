@@ -10,11 +10,10 @@ services:
  - docker
 script:
  - mvn install 
- - docker build --build-arg WAR_FILE .
+ - docker build -t woodenwindowbackend --build-arg WAR_FILE .
 after_success:
  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
- - docker tag woodenwindowbackend $DOCKER_USER/woodenwindowbackend:$TRAVIS_BUILD_NUMBER
- - docker push $DOCKER_USER/woodenwindowbackend:$TRAVIS_BUILD_NUMBER
+ - docker images
  - docker tag woodenwindowbackend $DOCKER_USER/woodenwindowbackend:latest
  - docker push $DOCKER_USER/woodenwindowbackend:latest
 
@@ -28,6 +27,3 @@ deploy:
  bucket_name: "elasticbeanstalk-us-east-1-883500907501"
  on:
   branch: master
-
-# Created security group named:
-# awseb-e-ck7a3kqg4b-stack-AWSEBSecurityGroup-MGD5FFMWDJ88
