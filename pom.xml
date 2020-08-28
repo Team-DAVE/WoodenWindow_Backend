@@ -27,7 +27,7 @@
         <dependencies>
             <dependency>
                 <groupId>org.springframework</groupId>
-                <artifactId>spring-orm</artifactId>
+                <artifactId>spring-framework-bom</artifactId>
                 <version>${spring.version}</version>
                 <type>pom</type>
                 <scope>import</scope>

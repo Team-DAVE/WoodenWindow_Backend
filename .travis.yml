@@ -10,7 +10,7 @@ services:
  - docker
 script:
  - mvn package
- - ls 
+ - ls
  - docker build -t woodenwindowbackend --build-arg WAR_FILE .
 after_success:
  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
