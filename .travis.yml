@@ -9,7 +9,8 @@ only: master
 services:
  - docker
 script:
- - mvn install 
+ - mvn package
+ - ls 
  - docker build -t woodenwindowbackend --build-arg WAR_FILE .
 after_success:
  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
