@@ -9,6 +9,7 @@ only: master
 services:
  - docker
 script:
+ - cd api 
  - mvn package
  - ls
  - docker build -t woodenwindowbackend --build-arg WAR_FILE .

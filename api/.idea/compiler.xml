@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="WoodenWindow_Backend" />
         <module name="WoodenWindow" />
+        <module name="api" />
       </profile>
     </annotationProcessing>
   </component>
