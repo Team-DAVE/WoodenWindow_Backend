@@ -10,7 +10,8 @@ services:
  - docker
 script:
  - mvn install 
- - docker build -t woodenwindowbackend --build-arg WAR_FILE .
+#  - docker build -t woodenwindowbackend --build-arg WAR_FILE .
+ - docker build -t woodenwindowbackend .
 after_success:
  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
  - docker images
