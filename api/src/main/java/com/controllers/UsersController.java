@@ -27,18 +27,17 @@ public class UsersController {
     @PostMapping
     @ResponseBody
     public boolean addUser(@RequestBody Users newUser) throws URISyntaxException {
-        System.out.println("addUser controller called");
+        log.info("addUser controller called");
         if (newUser.getEmail() == null) {
-            System.out.println("user is empty");
+            log.info("addUser, getEmail from newUser is null");
             return false;
         } else {
-            System.out.println("after else statement");
+            log.info("addUser, getEmail from newUser is not null");
             String email = newUser.getEmail();
             String password = newUser.getPassword();
             String firstName = newUser.getFirstName();
             String lastName = newUser.getLastName();
             return userService.addUser(email, password, firstName, lastName);
-            //  return new ResponseEntity<>("success", HttpStatus.CREATED);
         }
     }
 
@@ -50,16 +49,15 @@ public class UsersController {
     @PostMapping(path="/login")
     @ResponseBody
     public ResponseEntity<?> login(@RequestBody Users currentUser) throws URISyntaxException {
-        System.out.println("Login controller called");
+        log.info("Login Controller Called");
         if (currentUser != null) {
-            System.out.println("User is not empty statement");
+            log.info("currentUser is not an Empty Statement");
             String email = currentUser.getEmail();
             String password = currentUser.getPassword();
             Users returnUser = userService.checkUser(email, password);
             return new ResponseEntity<>(returnUser, HttpStatus.OK);
         } else {
-
-            System.out.println("user is empty");
+            log.info("currentUser is an Empty Statement");
             return null;
         }
     }
