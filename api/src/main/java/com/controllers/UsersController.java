@@ -19,6 +19,7 @@ import java.net.URISyntaxException;
 @RequestMapping(path="/user")
 public class UsersController {
     private UserService userService = new UserService();
+    static Logger log = Logger.getLogger(BudgetServlet.class);
 
     /**
      * addUser method will retrieve the information from the request and check whether is it null or not. If not null,
@@ -32,6 +33,7 @@ public class UsersController {
         if (newUser.getEmail() == null) {
             log.info("addUser, getEmail from newUser is null");
             return false;
+            log.info("addUser, getEmail from newUser returned false");
         } else {
             log.info("addUser, getEmail from newUser is not null");
             String email = newUser.getEmail();
@@ -39,6 +41,7 @@ public class UsersController {
             String firstName = newUser.getFirstName();
             String lastName = newUser.getLastName();
             return userService.addUser(email, password, firstName, lastName);
+            log.info("userService.addUser returned true");
         }
     }
 
@@ -60,6 +63,7 @@ public class UsersController {
         } else {
             log.info("currentUser is an Empty Statement");
             return null;
+            log.info("login returned null");
         }
     }
 }
