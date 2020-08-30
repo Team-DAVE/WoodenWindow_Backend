@@ -20,7 +20,7 @@ import java.util.List;
 @RequestMapping(path="/profile")
 public class ProfileController {
     private ProfileService profileService = new ProfileService();
-    static Logger log = Logger.getLogger(ProfieController.class);
+    static Logger log = Logger.getLogger(ProfileController.class);
 
     /**
      * addProfile method will retrieve the information from the request and check whether is it null or not. If not null,
