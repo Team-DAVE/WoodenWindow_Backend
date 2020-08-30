@@ -20,6 +20,7 @@ import java.util.List;
 @RequestMapping(path="/profile")
 public class ProfileController {
     private ProfileService profileService = new ProfileService();
+    static Logger log = Logger.getLogger(ProfieController.class);
 
     /**
      * addProfile method will retrieve the information from the request and check whether is it null or not. If not null,
@@ -29,17 +30,18 @@ public class ProfileController {
     @PostMapping
     @ResponseBody
     public ResponseEntity<?> addProfile(@RequestBody Profile newProfile) throws URISyntaxException {
-        System.out.println("ProfileController addProfile method reached");
+        log.info("ProfileController, addProfile method successfully reached");
         if (newProfile == null) {
-            System.out.println("profile is empty");
+            log.info("newProfile is null");
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         } else {
-            System.out.println("Profile is good");
+            log.info("newProfile is not null");
             String profileName = newProfile.getProfileName();
             String resume = newProfile.getResume();
             Users user = newProfile.getUser();
             Profile addedProfile = profileService.addProfile(profileName, resume, user);
             return new ResponseEntity<>(addedProfile, HttpStatus.CREATED);
+            log.info("ResponseEntity-AddedProfile successfully returned");
         }
     }
 
@@ -49,9 +51,10 @@ public class ProfileController {
     @GetMapping(path="{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<Profile> getProfileByProfileId(@PathVariable int id) {
-        System.out.println("ProfileController getProfileByProfileId method reached");
+        log.info("getProfileByProfileId method has successfully been reached");
         Profile profile = profileService.getProfileByProfileId(id);
         return new ResponseEntity<>(profile, HttpStatus.OK);
+        log.info("ResponseEntity-Profile successfully returned");
     }
 
     /**
@@ -60,9 +63,10 @@ public class ProfileController {
     @GetMapping(path="/user/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<List<Profile>> getProfilesByUserId(@PathVariable int id) {
-        System.out.println("ProfileController getProfilesByUserId method reached");
+        log.info("ProfileController getProfilesByUserId method successfully reached");
         List<Profile> profiles = profileService.getProfilesByUserId(id);
         System.out.println(profiles);
         return new ResponseEntity<>(profiles, HttpStatus.OK);
+        log.info("ResponseEntity-Profiles successfully returned");
     }
 }
