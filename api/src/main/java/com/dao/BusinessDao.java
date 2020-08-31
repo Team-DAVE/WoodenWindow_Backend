@@ -38,7 +38,7 @@ public class BusinessDao {
      */
     @Transactional
     public void addBusiness(String businessName, String address, String summary, Users user) {
-        System.out.println("made it to the businessDao, addBusiness method");
+        log.info("businessDao.addBusiness method initialized");
         Business newBusiness = new Business();
         newBusiness.setBusinessName(businessName);
         newBusiness.setAddress(address);
@@ -55,12 +55,13 @@ public class BusinessDao {
      */
     @Transactional
     public List<Business> getBusinessesByUserId(int userId) {
-        System.out.println("made it to the businessDao, getBusinessesByUserId method");
+        log.info("businessDao.getBusinessByUserId method initialized");
         Session session = sessionFactory.getCurrentSession();
         String sql = "Select b From Business b where users = ?";
         Query query = session.createQuery(sql);
         query.setInteger(0, userId);
         List businesses = query.list();
         return businesses;
+        log.info("businessDao.getBusinessByUserId returned businesses");
     }
 }
