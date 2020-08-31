@@ -22,7 +22,7 @@ import java.util.List;
 @Transactional
 public class ProfileSkillDao {
     SessionFactory sessionFactory;
-    	static Logger log = Logger.getLogger(BudgetServlet.class);
+    	static Logger log = Logger.getLogger(ProfileSkillDao.class);
 
     @Autowired
     public ProfileSkillDao(SessionFactory sf) {
