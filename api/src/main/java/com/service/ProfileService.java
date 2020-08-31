@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ import java.util.List;
 public class ProfileService {
     ProfileDao profileDao;
     UserDao userDao;
+    static Logger log = Logger.getLogger(ProfileService.class;
 
     @Autowired
     public ProfileService(ProfileDao profileDao, UserDao userDao) {
@@ -32,7 +34,7 @@ public class ProfileService {
      *  will return a profile to give back to the controller, else null.
      */
     public Profile addProfile(String profileName, String resume, Users user) {
-        System.out.println("ProfileService addProfile method reached");
+        log.info("ProfileService.addProfile method invoked");
         AbstractApplicationContext ac = new ClassPathXmlApplicationContext("application-context.xml");
         ProfileService profileServiceBean = ac.getBean("profileService", ProfileService.class);
         int profileId = profileServiceBean.profileDao.addProfile(profileName, resume, user);
@@ -40,8 +42,9 @@ public class ProfileService {
             Profile addedProfile = profileServiceBean.profileDao.getProfileByProfileId(profileId);
             ac.close();
             return addedProfile;
+            log.info("Returing addedProfile");
         }
-        System.out.println("ProfileService method ended bad profileId");
+        log.info("ProfileService.addProfile method ended with bad ProfileId");
         ac.close();
         return null;
     }
@@ -51,11 +54,12 @@ public class ProfileService {
      * getProfileByProfileId which will end up returning the user's profile
      */
     public Profile getProfileByProfileId(int profileId) {
-        System.out.println("ProfileService getProfileByProfileId method reached");
+        log.info("ProfileService.getProfileByProfileId method invoked");
         AbstractApplicationContext ac = new ClassPathXmlApplicationContext("application-context.xml");
         ProfileService profileServiceBean = ac.getBean("profileService", ProfileService.class);
         Profile profile = profileServiceBean.profileDao.getProfileByProfileId(profileId);
         return  profile;
+        log.info("Returning profile");
     }
 
     /**
@@ -63,12 +67,13 @@ public class ProfileService {
      * getProfileByUserId which will end up returning the user's profile
      */
     public List<Profile> getProfilesByUserId(int userId) {
-        System.out.println("ProfileService getProfilesByUserId method reached");
+        log.info("ProfileService.getProfilesByUserId method invoked");
         AbstractApplicationContext ac = new ClassPathXmlApplicationContext("application-context.xml");
         ProfileService profileServiceBean = ac.getBean("profileService", ProfileService.class);
         List<Profile> profiles = profileServiceBean.profileDao.getProfilesByUserId(userId);
         System.out.println(profiles);
         ac.close();
         return profiles;
+        log.info("Returning profiles");
     }
 }
