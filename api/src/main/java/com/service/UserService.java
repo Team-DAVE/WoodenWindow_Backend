@@ -35,10 +35,12 @@ public class UserService {
         if (userServiceBean.userDao.addUser(email, password, firstName, lastName)) {
             log.info("UserService.addUser after success Dao call in service");
             ac.close();
+            log.info("Returning true");
             return true;
         }
         else {
             ac.close();
+            log.info("Returning false");
             return false;
         }
     }
@@ -62,15 +64,15 @@ public class UserService {
             user.getFirstName();
             user.getLastName();
             ac.close();
-            return user;
             log.info("Returning user");
+            return user;
         }
         else {
             log.info("Incorrect password provided");
             ac.close();
         }
-        return null;
         log.info("Returning null");
+        return null;
     }
 
 }

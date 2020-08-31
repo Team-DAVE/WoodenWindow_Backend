@@ -19,7 +19,7 @@ import java.net.URISyntaxException;
 @RequestMapping(path="/user")
 public class UsersController {
     private UserService userService = new UserService();
-    static Logger log = Logger.getLogger(BudgetServlet.class);
+    static Logger log = Logger.getLogger(UsersController.class);
 
     /**
      * addUser method will retrieve the information from the request and check whether is it null or not. If not null,
@@ -29,19 +29,19 @@ public class UsersController {
     @PostMapping
     @ResponseBody
     public boolean addUser(@RequestBody Users newUser) throws URISyntaxException {
-        log.info("addUser controller called");
+        log.info("UsersController.addUser method invoked");
         if (newUser.getEmail() == null) {
             log.info("addUser, getEmail from newUser is null");
+            log.info("Returning false");
             return false;
-            log.info("addUser, getEmail from newUser returned false");
         } else {
             log.info("addUser, getEmail from newUser is not null");
             String email = newUser.getEmail();
             String password = newUser.getPassword();
             String firstName = newUser.getFirstName();
             String lastName = newUser.getLastName();
+            log.info("Returning userService.addUser");
             return userService.addUser(email, password, firstName, lastName);
-            log.info("userService.addUser returned true");
         }
     }
 
@@ -53,17 +53,18 @@ public class UsersController {
     @PostMapping(path="/login")
     @ResponseBody
     public ResponseEntity<?> login(@RequestBody Users currentUser) throws URISyntaxException {
-        log.info("Login Controller Called");
+        log.info("UsersController.login method invoked");
         if (currentUser != null) {
             log.info("currentUser is not an Empty Statement");
             String email = currentUser.getEmail();
             String password = currentUser.getPassword();
             Users returnUser = userService.checkUser(email, password);
+            log.info("Returning ResponseEntity(OK)");
             return new ResponseEntity<>(returnUser, HttpStatus.OK);
         } else {
             log.info("currentUser is an Empty Statement");
+            log.info("Returning null");
             return null;
-            log.info("login returned null");
         }
     }
 }

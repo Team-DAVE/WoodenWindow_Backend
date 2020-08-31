@@ -22,7 +22,7 @@ import java.util.List;
 @Transactional
 public class ProfileSkillDao {
     SessionFactory sessionFactory;
-    	static Logger log = Logger.getLogger(ProfileSkillDao.class);
+    static Logger log = Logger.getLogger(ProfileSkillDao.class);
 
     @Autowired
     public ProfileSkillDao(SessionFactory sf) {
@@ -38,7 +38,7 @@ public class ProfileSkillDao {
      */
     @Transactional
     public void addProfileSkill(String profileSkillName, Profile profile) {
-        log.info("ProfileSkillDao.addProfileSkill method initializing");
+        log.info("ProfileSkillDao.addProfileSkill method invoked");
         ProfileSkill newProfileSkill = new ProfileSkill();
         newProfileSkill.setProfileSkillName(profileSkillName);
         newProfileSkill.setProfile(profile);
@@ -54,13 +54,13 @@ public class ProfileSkillDao {
      */
     @Transactional
     public List<ProfileSkill> getProfileSkillsByProfile(int profileId) {
-        log.info("ProfileSkillDao.getProfileByProfile method initializing");
+        log.info("ProfileSkillDao.getProfileByProfile method invoked");
         Session session = sessionFactory.getCurrentSession();
         String sql = "Select p From ProfileSkill p where profile = ?";
         Query query = session.createQuery(sql);
         query.setInteger(0, profileId);
         List profileSkills = query.list();
+        log.info("Returning profileSkills");
         return profileSkills;
-        log.info("Returning ProfileSkills");
     }
 }

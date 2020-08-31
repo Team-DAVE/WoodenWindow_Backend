@@ -38,7 +38,7 @@ public class JobPostingDao {
      */
     @Transactional
     public void addJobPosting(String position, String jobSummary, String salary, Business business) {
-        log.info("JobPostingDao.addJobPosting method initializing");
+        log.info("JobPostingDao.addJobPosting method invoked");
         JobPosting jobPosting = new JobPosting();
         jobPosting.setPosition(position);
         jobPosting.setPosition(jobSummary);
@@ -55,13 +55,13 @@ public class JobPostingDao {
      */
     @Transactional
     public List<JobPosting> getJobPostingsByBusiness(int businessId) {
-        log.info("JobPostingDao.getJobPostingsByBusiness method initializing");
+        log.info("JobPostingDao.getJobPostingsByBusiness method invoked");
         Session session = sessionFactory.getCurrentSession();
         String sql = "Select j From JobPosting j where business = ?";
         Query query = session.createQuery(sql);
         query.setInteger(0, businessId);
         List jobPostings = query.list();
-        return jobPostings;
         log.info("Returning jobPostings");
+        return jobPostings;
     }
 }

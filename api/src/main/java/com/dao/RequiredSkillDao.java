@@ -22,7 +22,7 @@ import java.util.List;
 @Transactional
 public class RequiredSkillDao {
     SessionFactory sessionFactory;
-    	static Logger log = Logger.getLogger(RequiredSkillDao.class);
+    static Logger log = Logger.getLogger(RequiredSkillDao.class);
 
     @Autowired
     public RequiredSkillDao(SessionFactory sf) {
@@ -38,7 +38,7 @@ public class RequiredSkillDao {
      */
     @Transactional
     public void addRequiredSkill(String requiredSkillName, JobPosting jobPosting) {
-        log.info("RequiredSkillDao.addRequiredSkill method initializing");
+        log.info("RequiredSkillDao.addRequiredSkill method invoked");
         RequiredSkill newRequiredSkill = new RequiredSkill();
         newRequiredSkill.setRequiredSkillName(requiredSkillName);
         newRequiredSkill.setJobPosting(jobPosting);
@@ -53,13 +53,13 @@ public class RequiredSkillDao {
      */
     @Transactional
     public List<RequiredSkill> getRequiredSkillsByJobPosting(int jobPostingId) {
-        log.info("RequiredSkillDao.getRequiredSkilsByJobPosting method initializing");
+        log.info("RequiredSkillDao.getRequiredSkilsByJobPosting method invoked");
         Session session = sessionFactory.getCurrentSession();
         String sql = "Select r From RequiredSkill r where jobPosting = ?";
         Query query = session.createQuery(sql);
         query.setInteger(0, jobPostingId);
         List requiredSkills = query.list();
+        log.info("Returning requiredSkills");
         return requiredSkills;
-        log.info("Returning RequiredSkills");
     }
 }

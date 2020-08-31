@@ -21,7 +21,7 @@ import java.util.List;
 @Transactional
 public class ProfileDao {
     SessionFactory sessionFactory;
-    	static Logger log = Logger.getLogger(ProfileDao.class);
+    static Logger log = Logger.getLogger(ProfileDao.class);
 
     @Autowired
     public ProfileDao(SessionFactory sf) {
@@ -37,7 +37,7 @@ public class ProfileDao {
      */
     @Transactional
     public int addProfile(String profileName, String resume, Users user) {
-        log.info("ProfileDao.addProfile method initializing");
+        log.info("ProfileDao.addProfile method invoked");
         Profile newProfile = new Profile();
         newProfile.setProfileName(profileName);
         newProfile.setResume(resume);
@@ -56,14 +56,14 @@ public class ProfileDao {
      */
     @Transactional
     public Profile getProfileByProfileId(int profiledId) {
-        log.info("ProfileDao.getProfileByProfileId method initializing");
+        log.info("ProfileDao.getProfileByProfileId method invoked");
         Session session = sessionFactory.getCurrentSession();
         String sql = "Select p From Profile p where profileId = ?";
         Query query = session.createQuery(sql);
         query.setInteger(0, profiledId);
         Profile profile = (Profile) query.uniqueResult();
-        return profile;
         log.info("Returning profile");
+        return profile;
     }
 
     /**
@@ -72,13 +72,13 @@ public class ProfileDao {
      */
     @Transactional
     public List<Profile> getProfilesByUserId(int userId) {
-        log.info("ProfileDao.getProfilesByUserId method initializing");
+        log.info("ProfileDao.getProfilesByUserId method invoked");
         Session session = sessionFactory.getCurrentSession();
         String sql = "Select p From Profile p where users = ?";
         Query query = session.createQuery(sql);
         query.setInteger(0, userId);
         List profiles = query.list();
-        return profiles;
         log.info("Returing profiles");
+        return profiles;
     }
 }

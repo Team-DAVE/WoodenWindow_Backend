@@ -18,7 +18,7 @@ import java.util.List;
 public class ProfileService {
     ProfileDao profileDao;
     UserDao userDao;
-    static Logger log = Logger.getLogger(ProfileService.class;
+    static Logger log = Logger.getLogger(ProfileService.class);
 
     @Autowired
     public ProfileService(ProfileDao profileDao, UserDao userDao) {
@@ -39,15 +39,16 @@ public class ProfileService {
         ProfileService profileServiceBean = ac.getBean("profileService", ProfileService.class);
         int profileId = profileServiceBean.profileDao.addProfile(profileName, resume, user);
         if (profileId > 0) {
+            log.info("profileId is greated than zero");
             Profile addedProfile = profileServiceBean.profileDao.getProfileByProfileId(profileId);
             ac.close();
-            return addedProfile;
             log.info("Returing addedProfile");
+            return addedProfile;
         }
         log.info("ProfileService.addProfile method ended with bad ProfileId");
         ac.close();
-        return null;
         log.info("Returning null");
+        return null;
     }
 
     /**
@@ -59,8 +60,8 @@ public class ProfileService {
         AbstractApplicationContext ac = new ClassPathXmlApplicationContext("application-context.xml");
         ProfileService profileServiceBean = ac.getBean("profileService", ProfileService.class);
         Profile profile = profileServiceBean.profileDao.getProfileByProfileId(profileId);
-        return  profile;
         log.info("Returning profile");
+        return profile;
     }
 
     /**
@@ -74,7 +75,7 @@ public class ProfileService {
         List<Profile> profiles = profileServiceBean.profileDao.getProfilesByUserId(userId);
         System.out.println(profiles);
         ac.close();
-        return profiles;
         log.info("Returning profiles");
+        return profiles;
     }
 }
