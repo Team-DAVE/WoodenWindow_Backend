@@ -62,6 +62,6 @@ public class BusinessDao {
         query.setInteger(0, userId);
         List businesses = query.list();
         return businesses;
-        log.info("businessDao.getBusinessByUserId returned businesses");
+        log.info("businessDao.getBusinessByUserId Returning businesses");
     }
 }
