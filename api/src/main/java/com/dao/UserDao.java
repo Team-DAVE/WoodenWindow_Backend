@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
@@ -20,6 +21,7 @@ import java.util.List;
 @Transactional
 public class UserDao {
     SessionFactory sessionFactory;
+    static Logger log = Logger.getLogger(UserDao.class);
 
     @Autowired
     public UserDao(SessionFactory sf) {
@@ -36,7 +38,7 @@ public class UserDao {
      */
     @Transactional
     public boolean addUser(String email, String password, String firstName, String lastName) {
-        System.out.println("made it to dao");
+        log.info("UserDao.addUser method invoked");
         Users newUser = new Users();
         newUser.setEmail(email);
         newUser.setPassword(password);
@@ -48,11 +50,13 @@ public class UserDao {
         Query query = session.createQuery(sql);
         query.setParameter(0, newUser.getEmail());
         if (query.uniqueResult() == null) {
-            System.out.println("unique query in Dao");
+            log.info("Initializing unique query in UserDao");
             session.save(newUser);
-            System.out.println("user saved in Dao");
+            log.info("User saved in Dao");
+            log.info("Returning true");
             return true;
         }
+        log.info("Returning false");
         return false;
     }
 
@@ -62,19 +66,23 @@ public class UserDao {
      */
     @Transactional
     public Users findUserByEmail(String email) {
+        log.info("UserDao.findUserByEmail method invoked");
         Session session = sessionFactory.getCurrentSession();
         String sql = "Select u From Users u where email = ?";
         Query query = session.createQuery(sql);
         query.setParameter(0, email);
+        log.info("Returning Users");
         return (Users) query.uniqueResult();
     }
 
     @Transactional
     public Users findUserById(int id) {
+        log.info("UserDao.findUserById method invoked");
         Session session = sessionFactory.getCurrentSession();
         String sql = "Select u From Users u where userId = ?";
         Query query = session.createQuery(sql);
         query.setParameter(0, id);
+        log.info("Returning Users");
         return (Users) query.uniqueResult();
     }
 
@@ -83,13 +91,14 @@ public class UserDao {
      */
     @Transactional(isolation = Isolation.READ_COMMITTED, readOnly=true)
     public List<Users> findAll() {
-        System.out.println("dao method findall invoked");
+        log.info("UserDao.findAll method invoked");
         Session session;
         session = sessionFactory.getCurrentSession();
         System.out.println(session);
         String sql = "Select u From Users u";
         Query query = session.createQuery(sql);
         List<Users> users = query.list();
+        log.info("Returning users");
         return users;
     }
 }

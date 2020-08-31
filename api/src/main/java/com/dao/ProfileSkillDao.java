@@ -11,6 +11,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ import java.util.List;
 @Transactional
 public class ProfileSkillDao {
     SessionFactory sessionFactory;
+    static Logger log = Logger.getLogger(ProfileSkillDao.class);
 
     @Autowired
     public ProfileSkillDao(SessionFactory sf) {
@@ -36,7 +38,7 @@ public class ProfileSkillDao {
      */
     @Transactional
     public void addProfileSkill(String profileSkillName, Profile profile) {
-        System.out.println("made it to the profileSkillDao, addProfileSkill method");
+        log.info("ProfileSkillDao.addProfileSkill method invoked");
         ProfileSkill newProfileSkill = new ProfileSkill();
         newProfileSkill.setProfileSkillName(profileSkillName);
         newProfileSkill.setProfile(profile);
@@ -52,12 +54,13 @@ public class ProfileSkillDao {
      */
     @Transactional
     public List<ProfileSkill> getProfileSkillsByProfile(int profileId) {
-        System.out.println("made it to the profileSkillDao, getProfileSkillsByProfile method");
+        log.info("ProfileSkillDao.getProfileByProfile method invoked");
         Session session = sessionFactory.getCurrentSession();
         String sql = "Select p From ProfileSkill p where profile = ?";
         Query query = session.createQuery(sql);
         query.setInteger(0, profileId);
         List profileSkills = query.list();
+        log.info("Returning profileSkills");
         return profileSkills;
     }
 }

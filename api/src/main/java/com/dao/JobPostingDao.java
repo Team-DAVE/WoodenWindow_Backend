@@ -11,6 +11,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ import java.util.List;
 @Transactional
 public class JobPostingDao {
     SessionFactory sessionFactory;
+    static Logger log = Logger.getLogger(JobPostingDao.class);
 
     @Autowired
     public JobPostingDao(SessionFactory sf) {
@@ -36,7 +38,7 @@ public class JobPostingDao {
      */
     @Transactional
     public void addJobPosting(String position, String jobSummary, String salary, Business business) {
-        System.out.println("made it to the JobPostingDao, addJobPosting method");
+        log.info("JobPostingDao.addJobPosting method invoked");
         JobPosting jobPosting = new JobPosting();
         jobPosting.setPosition(position);
         jobPosting.setPosition(jobSummary);
@@ -53,12 +55,13 @@ public class JobPostingDao {
      */
     @Transactional
     public List<JobPosting> getJobPostingsByBusiness(int businessId) {
-        System.out.println("made it to the JobPostingDao, getJobPostingsByBusiness method");
+        log.info("JobPostingDao.getJobPostingsByBusiness method invoked");
         Session session = sessionFactory.getCurrentSession();
         String sql = "Select j From JobPosting j where business = ?";
         Query query = session.createQuery(sql);
         query.setInteger(0, businessId);
         List jobPostings = query.list();
+        log.info("Returning jobPostings");
         return jobPostings;
     }
 }

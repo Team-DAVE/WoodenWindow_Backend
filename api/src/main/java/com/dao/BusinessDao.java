@@ -11,6 +11,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ import java.util.List;
 @Transactional
 public class BusinessDao {
     SessionFactory sessionFactory;
+    static Logger log = Logger.getLogger(BusinessDao.class);
 
     @Autowired
     public BusinessDao(SessionFactory sf) {
@@ -36,7 +38,7 @@ public class BusinessDao {
      */
     @Transactional
     public void addBusiness(String businessName, String address, String summary, Users user) {
-        System.out.println("made it to the businessDao, addBusiness method");
+        log.info("BusinessDao.addBusiness method invoked");
         Business newBusiness = new Business();
         newBusiness.setBusinessName(businessName);
         newBusiness.setAddress(address);
@@ -53,12 +55,13 @@ public class BusinessDao {
      */
     @Transactional
     public List<Business> getBusinessesByUserId(int userId) {
-        System.out.println("made it to the businessDao, getBusinessesByUserId method");
+        log.info("BusinessDao.getBusinessByUserId method invoked");
         Session session = sessionFactory.getCurrentSession();
         String sql = "Select b From Business b where users = ?";
         Query query = session.createQuery(sql);
         query.setInteger(0, userId);
         List businesses = query.list();
+        log.info("Returning businesses");
         return businesses;
     }
 }

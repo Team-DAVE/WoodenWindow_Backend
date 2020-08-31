@@ -10,6 +10,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
@@ -20,6 +21,7 @@ import java.util.List;
 @Transactional
 public class ProfileDao {
     SessionFactory sessionFactory;
+    static Logger log = Logger.getLogger(ProfileDao.class);
 
     @Autowired
     public ProfileDao(SessionFactory sf) {
@@ -35,7 +37,7 @@ public class ProfileDao {
      */
     @Transactional
     public int addProfile(String profileName, String resume, Users user) {
-        System.out.println("made it to the profileDao, addProfile method");
+        log.info("ProfileDao.addProfile method invoked");
         Profile newProfile = new Profile();
         newProfile.setProfileName(profileName);
         newProfile.setResume(resume);
@@ -54,12 +56,13 @@ public class ProfileDao {
      */
     @Transactional
     public Profile getProfileByProfileId(int profiledId) {
-        System.out.println("made it to the profileDao, getProfilebyProfileId method");
+        log.info("ProfileDao.getProfileByProfileId method invoked");
         Session session = sessionFactory.getCurrentSession();
         String sql = "Select p From Profile p where profileId = ?";
         Query query = session.createQuery(sql);
         query.setInteger(0, profiledId);
         Profile profile = (Profile) query.uniqueResult();
+        log.info("Returning profile");
         return profile;
     }
 
@@ -69,12 +72,13 @@ public class ProfileDao {
      */
     @Transactional
     public List<Profile> getProfilesByUserId(int userId) {
-        System.out.println("made it to the profileDao, getProfilesByUserId method");
+        log.info("ProfileDao.getProfilesByUserId method invoked");
         Session session = sessionFactory.getCurrentSession();
         String sql = "Select p From Profile p where users = ?";
         Query query = session.createQuery(sql);
         query.setInteger(0, userId);
         List profiles = query.list();
+        log.info("Returing profiles");
         return profiles;
     }
 }

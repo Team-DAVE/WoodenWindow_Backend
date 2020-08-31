@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 import java.net.URISyntaxException;
@@ -18,6 +19,7 @@ import java.net.URISyntaxException;
 @RequestMapping(path="/user")
 public class UsersController {
     private UserService userService = new UserService();
+    static Logger log = Logger.getLogger(UsersController.class);
 
     /**
      * addUser method will retrieve the information from the request and check whether is it null or not. If not null,
@@ -27,18 +29,19 @@ public class UsersController {
     @PostMapping
     @ResponseBody
     public boolean addUser(@RequestBody Users newUser) throws URISyntaxException {
-        System.out.println("addUser controller called");
+        log.info("UsersController.addUser method invoked");
         if (newUser.getEmail() == null) {
-            System.out.println("user is empty");
+            log.info("addUser, getEmail from newUser is null");
+            log.info("Returning false");
             return false;
         } else {
-            System.out.println("after else statement");
+            log.info("addUser, getEmail from newUser is not null");
             String email = newUser.getEmail();
             String password = newUser.getPassword();
             String firstName = newUser.getFirstName();
             String lastName = newUser.getLastName();
+            log.info("Returning userService.addUser");
             return userService.addUser(email, password, firstName, lastName);
-            //  return new ResponseEntity<>("success", HttpStatus.CREATED);
         }
     }
 
@@ -50,16 +53,17 @@ public class UsersController {
     @PostMapping(path="/login")
     @ResponseBody
     public ResponseEntity<?> login(@RequestBody Users currentUser) throws URISyntaxException {
-        System.out.println("Login controller called");
+        log.info("UsersController.login method invoked");
         if (currentUser != null) {
-            System.out.println("User is not empty statement");
+            log.info("currentUser is not an Empty Statement");
             String email = currentUser.getEmail();
             String password = currentUser.getPassword();
             Users returnUser = userService.checkUser(email, password);
+            log.info("Returning ResponseEntity(OK)");
             return new ResponseEntity<>(returnUser, HttpStatus.OK);
         } else {
-
-            System.out.println("user is empty");
+            log.info("currentUser is an Empty Statement");
+            log.info("Returning null");
             return null;
         }
     }

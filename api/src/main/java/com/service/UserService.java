@@ -8,13 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
-//import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
 @Service
 public class UserService {
     UserDao userDao;
+    static Logger log = Logger.getLogger(UserService.class);
 
     @Autowired
     public UserService(UserDao userDao) {
@@ -28,16 +29,18 @@ public class UserService {
      * which will return a boolean to give back to the controller to determine whether it will add user or be stopped.
      */
     public boolean addUser(String email, String password, String firstName, String lastName) {
-        System.out.println("service method beggining");
+        log.info("UserService.addUser method invoked");
         AbstractApplicationContext ac = new ClassPathXmlApplicationContext("application-context.xml");
         UserService userServiceBean = ac.getBean("userService", UserService.class);
         if (userServiceBean.userDao.addUser(email, password, firstName, lastName)) {
-            System.out.println("after success dao call in service");
+            log.info("UserService.addUser after success Dao call in service");
             ac.close();
+            log.info("Returning true");
             return true;
         }
         else {
             ac.close();
+            log.info("Returning false");
             return false;
         }
     }
@@ -48,25 +51,27 @@ public class UserService {
      * correct, then the user information will be returned to the controller. If not, it will return null.
      */
     public Users checkUser(String email, String password) {
-        System.out.println("checkUser method beginning");
+        log.info("UserService.checkUser method invoked");
         AbstractApplicationContext ac = new ClassPathXmlApplicationContext("application-context.xml");
         UserService userServiceBean = ac.getBean("userService", UserService.class);
         Users user = userServiceBean.userDao.findUserByEmail(email);
         System.out.println(user);
         System.out.println(password);
         if (user.getPassword().equals(password)) {
-            System.out.println("password is the same");
+            log.info("UserService.checkUser correct password provided");
             user.getUserId();
             user.getEmail();
             user.getFirstName();
             user.getLastName();
             ac.close();
+            log.info("Returning user");
             return user;
         }
         else {
-            System.out.println("Password is not the same");
+            log.info("Incorrect password provided");
             ac.close();
         }
+        log.info("Returning null");
         return null;
     }
 
