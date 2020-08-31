@@ -62,6 +62,6 @@ public class JobPostingDao {
         query.setInteger(0, businessId);
         List jobPostings = query.list();
         return jobPostings;
-        log.info("returning jobPostings");
+        log.info("Returning jobPostings");
     }
 }
