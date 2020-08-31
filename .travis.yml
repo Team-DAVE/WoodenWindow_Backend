@@ -1,37 +1,32 @@
 language: java
- jdk: 
- - oraclejdk8
+jdk: oraclejdk8
+dist: trusty
 
 # whitelist
 branches:
- only:
-  - master
+only: master
 
 services:
  - docker
-before_script:
- -mvn install
 script:
- - mvn install mvn run test --watch=false --no-progress
- - docker build -t WoodenWindowBackEnd
+ - cd api 
+ - mvn package
+ - ls
+ - docker build -t woodenwindowbackend --build-arg WAR_FILE .
+ - cd ..
 after_success:
  - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
- - docker tag WoodenWindowBackEnd $DOCKER_USER/WoodenWindowBackEnd:$TRAVIS_BUILD_NUMBER
- - docker push $DOCKER_USER/WoodenWindowBackEnd:$TRAVIS_BUILD_NUMBER
- - docker tag WoodenWindowBackEnd $DOCKER_USER/WoodenWindowBackEnd:latest
- - docker push $DOCKER_USER/WoodenWindowBackEnd:latest
+ - docker images
+ - docker tag woodenwindowbackend $DOCKER_USER/woodenwindowbackend:latest
+ - docker push $DOCKER_USER/woodenwindowbackend:latest
 
 deploy:
  provider: elasticbeanstalk
- access_key_id:
-   secure: "ACCESS-KEY-ID"
- secret_access_key:
-   secure: "SECRET-ACCESS-KEY"
+ access_key_id: $AWS_ACCESS_KEY
+ secret_access_key: $AWS_SECRET_ACCESS_KEY
  region: "us-east-1"
- app: "Project_2"
- env: "http://project2-env.eba-pmybczpa.us-east-1.elasticbeanstalk.com/"
+ app: "wooden_window"
+ env: "WoodenWindow-env"
  bucket_name: "elasticbeanstalk-us-east-1-883500907501"
  on:
-   branch: master
-
-
+  branch: master

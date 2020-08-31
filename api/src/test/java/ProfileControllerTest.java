@@ -52,11 +52,6 @@ public class ProfileControllerTest {
     @Mock
     private ProfileService profileServiceMock;
 
-//    @Mock
-//    private ProfileDao profileDaoMock;
-//    @InjectMocks
-//    private ProfileService profileService;
-
     @InjectMocks
     @Autowired
     private ProfileController profileController;
@@ -83,12 +78,7 @@ public class ProfileControllerTest {
         profile.setResume("helllllloooo");
         profile.setUser(currentUser);
         when(profileServiceMock.getProfileByProfileId(1)).thenReturn(profile);
-//        when(profileDaoMock.getProfileByProfileId(1)).thenReturn(profile);
 
-//        System.out.println(profileController.getProfileByProfileId(1));
-//        assertThat(profileController.getProfileByProfileId(1),is(notNullValue()));
-//        when(profileServiceMock.getProfileByProfileId(id)).thenReturn(new Profile());
-//        System.out.println(profile);
         MvcResult result = this.mockMvc.perform(get("/profile/" + id))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -105,7 +95,6 @@ public class ProfileControllerTest {
         currentUser.setFirstName("hello");
         currentUser.setLastName("hello");
 
-//        List<ArrayList<String>> listList = new ArrayList<ArrayList<String>>();
         List<Profile> profiles = new ArrayList<>();
         Profile testProfile = new Profile();
         testProfile.setProfileId(1);
@@ -122,42 +111,12 @@ public class ProfileControllerTest {
         profiles.add(testProfile2);
 
         when(profileServiceMock.getProfilesByUserId(1)).thenReturn(profiles);
-//        when(profileDaoMock.getProfileByProfileId(1)).thenReturn(profile);
 
-//        assertThat(profileController.getProfileByProfileId(1),is(notNullValue()));
-//        when(profileServiceMock.getProfileByProfileId(id)).thenReturn(new Profile());
-//        System.out.println(profile);
         MvcResult result = this.mockMvc.perform(get("/profile/user/" + id))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andReturn();
         Assert.assertNotNull(result);
     }
-//    @Test
-//        public void testProfileByProfile() throws Exception{
-//        Users currentUser= new Users();
-//        currentUser.setUserId(1);
-//        currentUser.setEmail("hello@hello.com");
-//        currentUser.setPassword("hello");
-//        currentUser.setFirstName("hello");
-//        currentUser.setLastName("hello");
-//
-//        Profile profile = new Profile();
-//        profile.setProfileId(1);
-//        profile.setProfileName("hello");
-//        profile.setResume("helllllloooo");
-//        profile.setUser(currentUser);
-//        when(profileServiceMock.getProfileByProfileId(1)).thenReturn(profile);
-//
-//        System.out.println(profileController.getProfileByProfileId(1));
-//        assertThat(profileController.getProfileByProfileId(1),is(notNullValue()));
-//
-//    }
-//    @Test
-//    public void testProfileByProfile() throws Exception{
-//        int id =1;
-//        this.mockMvc.perform(get("/profile/" + id)).andDo(print()).andExpect(status().isOk())
-//                .andExpect(content().string(containsString("Hello, World")));
-//
-//    }
+
 }
