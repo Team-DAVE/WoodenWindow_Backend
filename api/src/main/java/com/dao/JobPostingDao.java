@@ -22,7 +22,7 @@ import java.util.List;
 @Transactional
 public class JobPostingDao {
     SessionFactory sessionFactory;
-    static Logger log = Logger.getLogger(BudgetServlet.class);
+    static Logger log = Logger.getLogger(JobPostingDao.class);
 
     @Autowired
     public JobPostingDao(SessionFactory sf) {
