@@ -74,31 +74,4 @@ public class UserDao {
         log.info("Returning Users");
         return (Users) query.uniqueResult();
     }
-
-    @Transactional
-    public Users findUserById(int id) {
-        log.info("UserDao.findUserById method invoked");
-        Session session = sessionFactory.getCurrentSession();
-        String sql = "Select u From Users u where userId = ?";
-        Query query = session.createQuery(sql);
-        query.setParameter(0, id);
-        log.info("Returning Users");
-        return (Users) query.uniqueResult();
-    }
-
-    /**
-     * findAll method will create and run a query to get all users from the table Users.
-     */
-    @Transactional(isolation = Isolation.READ_COMMITTED, readOnly=true)
-    public List<Users> findAll() {
-        log.info("UserDao.findAll method invoked");
-        Session session;
-        session = sessionFactory.getCurrentSession();
-        System.out.println(session);
-        String sql = "Select u From Users u";
-        Query query = session.createQuery(sql);
-        List<Users> users = query.list();
-        log.info("Returning users");
-        return users;
-    }
 }

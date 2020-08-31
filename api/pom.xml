@@ -42,6 +42,7 @@
             <version>1.4</version>
         </dependency>
 
+
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
@@ -88,6 +89,7 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>${spring.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -131,6 +133,7 @@
             <artifactId>log4j</artifactId>
             <version>1.2.12</version>
         </dependency>
+
     </dependencies>
 
     <build>
