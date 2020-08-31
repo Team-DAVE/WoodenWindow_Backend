@@ -47,6 +47,7 @@ public class ProfileService {
         log.info("ProfileService.addProfile method ended with bad ProfileId");
         ac.close();
         return null;
+        log.info("Returning null");
     }
 
     /**
