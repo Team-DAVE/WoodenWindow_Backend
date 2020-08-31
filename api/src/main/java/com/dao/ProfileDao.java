@@ -21,7 +21,7 @@ import java.util.List;
 @Transactional
 public class ProfileDao {
     SessionFactory sessionFactory;
-    	static Logger log = Logger.getLogger(BudgetServlet.class);
+    	static Logger log = Logger.getLogger(ProfileDao.class);
 
     @Autowired
     public ProfileDao(SessionFactory sf) {
