@@ -69,27 +69,27 @@ public class UserDao {
         return (Users) query.uniqueResult();
     }
 
-    @Transactional
-    public Users findUserById(int id) {
-        Session session = sessionFactory.getCurrentSession();
-        String sql = "Select u From Users u where userId = ?";
-        Query query = session.createQuery(sql);
-        query.setParameter(0, id);
-        return (Users) query.uniqueResult();
-    }
+//    @Transactional
+//    public Users findUserById(int id) {
+//        Session session = sessionFactory.getCurrentSession();
+//        String sql = "Select u From Users u where userId = ?";
+//        Query query = session.createQuery(sql);
+//        query.setParameter(0, id);
+//        return (Users) query.uniqueResult();
+//    }
 
     /**
      * findAll method will create and run a query to get all users from the table Users.
      */
-    @Transactional(isolation = Isolation.READ_COMMITTED, readOnly=true)
-    public List<Users> findAll() {
-        System.out.println("dao method findall invoked");
-        Session session;
-        session = sessionFactory.getCurrentSession();
-        System.out.println(session);
-        String sql = "Select u From Users u";
-        Query query = session.createQuery(sql);
-        List<Users> users = query.list();
-        return users;
-    }
+//    @Transactional(isolation = Isolation.READ_COMMITTED, readOnly=true)
+//    public List<Users> findAll() {
+//        System.out.println("dao method findall invoked");
+//        Session session;
+//        session = sessionFactory.getCurrentSession();
+//        System.out.println(session);
+//        String sql = "Select u From Users u";
+//        Query query = session.createQuery(sql);
+//        List<Users> users = query.list();
+//        return users;
+//    }
 }
