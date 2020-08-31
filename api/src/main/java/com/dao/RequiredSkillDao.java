@@ -11,6 +11,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ import java.util.List;
 @Transactional
 public class RequiredSkillDao {
     SessionFactory sessionFactory;
+    	static Logger log = Logger.getLogger(RequiredSkillDao.class);
 
     @Autowired
     public RequiredSkillDao(SessionFactory sf) {
@@ -36,7 +38,7 @@ public class RequiredSkillDao {
      */
     @Transactional
     public void addRequiredSkill(String requiredSkillName, JobPosting jobPosting) {
-        System.out.println("made it to the RequiredSkillDao, addRequiredSkill method");
+        log.info("RequiredSkillDao.addRequiredSkill method initializing");
         RequiredSkill newRequiredSkill = new RequiredSkill();
         newRequiredSkill.setRequiredSkillName(requiredSkillName);
         newRequiredSkill.setJobPosting(jobPosting);
@@ -51,12 +53,13 @@ public class RequiredSkillDao {
      */
     @Transactional
     public List<RequiredSkill> getRequiredSkillsByJobPosting(int jobPostingId) {
-        System.out.println("made it to the RequiredSkillDao, getRequiredSkillsByJobPosting method");
+        log.info("RequiredSkillDao.getRequiredSkilsByJobPosting method initializing");
         Session session = sessionFactory.getCurrentSession();
         String sql = "Select r From RequiredSkill r where jobPosting = ?";
         Query query = session.createQuery(sql);
         query.setInteger(0, jobPostingId);
         List requiredSkills = query.list();
         return requiredSkills;
+        log.info("Returning RequiredSkills");
     }
 }
