@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="WoodenWindow_Backend:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>WoodenWindow_Backend</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="WoodenWindow.war">
+      <element id="artifact" artifact-name="WoodenWindow_Backend:war exploded" />
+    </root>
+  </artifact>
+</component>

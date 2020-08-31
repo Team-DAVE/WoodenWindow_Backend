@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ef5938b9-4a71-44e9-b980-b911bd6a02c4" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit4 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1gf9v0hGWpjm6gkOBlZqO2JiZkf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.controllers" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.UserControllerTest">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WoodenWindow_Backend" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserControllerTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest.testAddProfile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WoodenWindow_Backend" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserControllerTest" />
+      <option name="METHOD_NAME" value="testAddProfile" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest.testAddUserDao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WoodenWindow_Backend" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserControllerTest" />
+      <option name="METHOD_NAME" value="testAddUserDao" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest.testProfileDao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WoodenWindow_Backend" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserControllerTest" />
+      <option name="METHOD_NAME" value="testProfileDao" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest.testUserDao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WoodenWindow_Backend" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserControllerTest" />
+      <option name="METHOD_NAME" value="testUserDao" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 8.5.572" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.572" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="WoodenWindow_Backend:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/WoodenWindow_Backend_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_8_5_572_WoodenWindow" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="51731" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="WoodenWindow_Backend:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.572" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="WoodenWindow_Backend:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/WoodenWindow_Backend_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_WoodenWindow" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="51731" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="WoodenWindow_Backend:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.UserControllerTest" />
+      <item itemvalue="Tomcat Server.Tomcat 8.5.572" />
+      <item itemvalue="JUnit.UserControllerTest.testUserDao" />
+      <item itemvalue="JUnit.UserControllerTest.testProfileDao" />
+      <item itemvalue="JUnit.UserControllerTest.testAddProfile" />
+      <item itemvalue="JUnit.UserControllerTest.testAddUserDao" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserControllerTest" />
+        <item itemvalue="JUnit.UserControllerTest.testAddUserDao" />
+        <item itemvalue="JUnit.UserControllerTest.testAddProfile" />
+        <item itemvalue="JUnit.UserControllerTest.testProfileDao" />
+        <item itemvalue="JUnit.UserControllerTest.testUserDao" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ef5938b9-4a71-44e9-b980-b911bd6a02c4" name="Default Changelist" comment="" />
+      <created>1598495006168</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598495006168</updated>
+      <workItem from="1598495007234" duration="22310000" />
+      <workItem from="1598624200397" duration="47067000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1182" y="400" key="#Tomcat_Server" timestamp="1598495077659">
+      <screen x="-1920" y="3" width="1920" height="1040" />
+    </state>
+    <state x="-1182" y="400" key="#Tomcat_Server/0.0.1855.1080/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1598495077659" />
+    <state x="635" y="144" width="1092" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598819867372">
+      <screen x="0" y="0" width="1855" height="1080" />
+    </state>
+    <state x="-1506" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1855.1080/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1598495206093" />
+    <state x="635" y="144" width="1092" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1855.1080/-1920.3.1920.1040@0.0.1855.1080" timestamp="1598819867372" />
+    <state x="89" y="96" width="1678" height="889" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1598804479693">
+      <screen x="0" y="0" width="1855" height="1080" />
+    </state>
+    <state x="-1828" y="95" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1855.1080/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1598537164796" />
+    <state x="89" y="96" width="1678" height="889" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1855.1080/-1920.3.1920.1040@0.0.1855.1080" timestamp="1598804479693" />
+    <state x="676" y="302" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1598819861342">
+      <screen x="0" y="0" width="1855" height="1080" />
+    </state>
+    <state x="676" y="302" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1855.1080/-1920.3.1920.1040@0.0.1855.1080" timestamp="1598819861342" />
+    <state x="675" y="316" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1598818444339">
+      <screen x="0" y="0" width="1855" height="1080" />
+    </state>
+    <state x="675" y="316" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1855.1080/-1920.3.1920.1040@0.0.1855.1080" timestamp="1598818444339" />
+    <state x="714" y="270" key="FileChooserDialogImpl" timestamp="1598842610790">
+      <screen x="0" y="0" width="1855" height="1080" />
+    </state>
+    <state x="-1181" y="263" key="FileChooserDialogImpl/0.0.1855.1080/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1598495076005" />
+    <state x="714" y="270" key="FileChooserDialogImpl/0.0.1855.1080/-1920.3.1920.1040@0.0.1855.1080" timestamp="1598842610790" />
+    <state width="1812" height="364" key="GridCell.Tab.0.bottom" timestamp="1598842620437">
+      <screen x="0" y="0" width="1855" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1855.1080/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1598555717155" />
+    <state width="1812" height="364" key="GridCell.Tab.0.bottom/0.0.1855.1080/-1920.3.1920.1040@0.0.1855.1080" timestamp="1598842620437" />
+    <state width="1812" height="364" key="GridCell.Tab.0.center" timestamp="1598842620437">
+      <screen x="0" y="0" width="1855" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1855.1080/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1598555717154" />
+    <state width="1812" height="364" key="GridCell.Tab.0.center/0.0.1855.1080/-1920.3.1920.1040@0.0.1855.1080" timestamp="1598842620437" />
+    <state width="1812" height="364" key="GridCell.Tab.0.left" timestamp="1598842620437">
+      <screen x="0" y="0" width="1855" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1855.1080/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1598555717154" />
+    <state width="1812" height="364" key="GridCell.Tab.0.left/0.0.1855.1080/-1920.3.1920.1040@0.0.1855.1080" timestamp="1598842620437" />
+    <state width="1812" height="364" key="GridCell.Tab.0.right" timestamp="1598842620437">
+      <screen x="0" y="0" width="1855" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1855.1080/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1598555717155" />
+    <state width="1812" height="364" key="GridCell.Tab.0.right/0.0.1855.1080/-1920.3.1920.1040@0.0.1855.1080" timestamp="1598842620437" />
+    <state width="1812" height="364" key="GridCell.Tab.1.bottom" timestamp="1598842620437">
+      <screen x="0" y="0" width="1855" height="1080" />
+    </state>
+    <state width="1812" height="364" key="GridCell.Tab.1.bottom/0.0.1855.1080/-1920.3.1920.1040@0.0.1855.1080" timestamp="1598842620437" />
+    <state width="1812" height="364" key="GridCell.Tab.1.center" timestamp="1598842620437">
+      <screen x="0" y="0" width="1855" height="1080" />
+    </state>
+    <state width="1812" height="364" key="GridCell.Tab.1.center/0.0.1855.1080/-1920.3.1920.1040@0.0.1855.1080" timestamp="1598842620437" />
+    <state width="1812" height="364" key="GridCell.Tab.1.left" timestamp="1598842620437">
+      <screen x="0" y="0" width="1855" height="1080" />
+    </state>
+    <state width="1812" height="364" key="GridCell.Tab.1.left/0.0.1855.1080/-1920.3.1920.1040@0.0.1855.1080" timestamp="1598842620437" />
+    <state width="1812" height="364" key="GridCell.Tab.1.right" timestamp="1598842620437">
+      <screen x="0" y="0" width="1855" height="1080" />
+    </state>
+    <state width="1812" height="364" key="GridCell.Tab.1.right/0.0.1855.1080/-1920.3.1920.1040@0.0.1855.1080" timestamp="1598842620437" />
+    <state x="473" y="181" key="Maven.ArtifactSearchDialog" timestamp="1598763725960">
+      <screen x="0" y="0" width="1855" height="1080" />
+    </state>
+    <state x="-1430" y="177" key="Maven.ArtifactSearchDialog/0.0.1855.1080/-1920.3.1920.1040@-1920.3.1920.1040" timestamp="1598545644132" />
+    <state x="473" y="181" key="Maven.ArtifactSearchDialog/0.0.1855.1080/-1920.3.1920.1040@0.0.1855.1080" timestamp="1598763725960" />
+    <state x="92" y="92" width="1671" height="896" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1598842086480">
+      <screen x="0" y="0" width="1855" height="1080" />
+    </state>
+    <state x="92" y="92" width="1671" height="896" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1855.1080/-1920.3.1920.1040@0.0.1855.1080" timestamp="1598842086480" />
+    <state x="698" y="337" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1598763935698">
+      <screen x="0" y="0" width="1855" height="1080" />
+    </state>
+    <state x="698" y="337" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1855.1080/-1920.3.1920.1040@0.0.1855.1080" timestamp="1598763935698" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/WoodenWindow$ProfileControllerTest_testProfileByProfileID.ic" NAME="ProfileControllerTest.testProfileByProfileID Coverage Results" MODIFIED="1598806830538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/WoodenWindow$ProfileControllerTest1_testProfileByProfileID.ic" NAME="ProfileControllerTest1.testProfileByProfileID Coverage Results" MODIFIED="1598806265386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/WoodenWindow$UserControllerTest_testRequiredSkillModel.ic" NAME="UserControllerTest.testRequiredSkillModel Coverage Results" MODIFIED="1598822880727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/WoodenWindow$ProfileControllerTest.ic" NAME="ProfileControllerTest Coverage Results" MODIFIED="1598818502634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.controllers.*</FILTER>
+      <FILTER>com.dao.*</FILTER>
+      <FILTER>com.model.*</FILTER>
+      <FILTER>com.service.ORMConfig</FILTER>
+      <FILTER>com.service.ProfileService</FILTER>
+      <FILTER>com.service.UserService</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/WoodenWindow$UserControllerTest.ic" NAME="UserControllerTest Coverage Results" MODIFIED="1598833882235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/WoodenWindow$UserControllerTest_testLogin.ic" NAME="UserControllerTest.testLogin Coverage Results" MODIFIED="1598820901920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/WoodenWindow$ProfileControllerTest_testProfileByProfileUserID.ic" NAME="ProfileControllerTest.testProfileByProfileUserID Coverage Results" MODIFIED="1598811373549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/WoodenWindow$UserControllerTest_testAddUser.ic" NAME="UserControllerTest.testAddUser Coverage Results" MODIFIED="1598818160307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
